@@ -17,7 +17,7 @@ class CreateBlog extends Migration
             $table->id();
             $table->string('title');
             $table->string('category');
-            $table->string('image');
+            $table->string('image')->default('/images/no_img_blog.jpg');
             $table->text('description');
             $table->text('content');
             $table->timestamps();

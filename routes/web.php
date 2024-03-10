@@ -19,11 +19,13 @@ Route::get('/blog/read/id-blog={blog}/edit', [BlogController::class, 'edit'])->n
 // Route cập nhật bài viết
 Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
 
+Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
 // Lưu bài viết mới
 Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
 
 // Hiển thị bài viết
 Route::get('/blog/read/id-blog={blog}/', [BlogController::class, 'show'])->name('blog.read');
+
 
 Auth::routes();
 

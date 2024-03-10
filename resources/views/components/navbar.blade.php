@@ -41,7 +41,7 @@
 
         <div class="flex items-center">
             <a href="/" class="linknav mr-4 font-baloo text-xl {{ Request::is('/') ? 'text-red-500 hover:text-red-600' : 'text-white  hover:text-gray-200'}}">| Trang chủ </a>
-            <a href="/all-blog/" class="linknav mr-4 font-baloo text-xl {{ Request::is('/all-blog') ? 'text-red-500 hover:text-red-600' : 'text-white  hover:text-gray-200'}}">| Tất cả blog </a>
+            <a href="/all-blog/" class="linknav mr-4 font-baloo text-xl {{ Request::is('all-blog') ? 'text-red-500 hover:text-red-600' : 'text-white  hover:text-gray-200'}}">| Tất cả blog </a>
             <a href="#" class="linknav mr-4 font-baloo text-xl {{ Request::is('/#') ? 'text-red-500 hover:text-red-600' : 'text-white  hover:text-gray-200'}}">| Nhạc của Tân </a>
             @if(Auth::check()) <!-- Kiểm tra xem người dùng đã đăng nhập chưa -->
                 <p class="">|</p>

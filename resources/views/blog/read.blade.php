@@ -13,10 +13,18 @@
         <!-- Kiểm tra xem người dùng đã đăng nhập chưa -->
         @if (Auth::user()->role == 0)
         @else
+        <div class="fixed bottom-5 right-5">
             <a href='{{ route('blog.edit', $blog->id) }}'
-                class="w-14 h-14 fixed bottom-5 right-5 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full justify-center items-center flex">
+                class="w-14 h-14  bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full justify-center items-center flex block mb-4">
                 <i class="fas fa-pen"></i>
             </a>
+             <form action="{{ route('blog.destroy', $blog->id) }}" method="POST" class="w-14 h-14  bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full justify-center items-center flex block">
+                @csrf
+                @method('DELETE')
+                <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa blog này không?')"><i class="fas fa-trash"></i></button>
+            </form>
+        </div>        
+            
         @endif
     @endif
     <header>
